@@ -4,9 +4,30 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet" type="text/css" />
   <title>Tasty Treats</title>
 </head>
 <body>
-  <h1>Tasty Treats</h1>
+  <header>
+    <h1>Tasty Treats inquiry form</h1>
+  </header>
+  <main>
+    <form class="form">
+      <label for="name"/>Your Name</label>
+      <input type="text" name="name" class="form__name" required/>
+      <label for="email"/>Your Email Address</label>
+      <input type="email" name="email" class="form__email" required/>
+      <label for="inquiry"/>Your Inquiry</label>
+      <textarea name="inquiry" class="form__inquiry" rows="10" required></textarea>
+      <div>
+        <input type="checkbox" name="subscribe" class="form__subscribe"/>
+        <label class="form__subscribe-label" for="subscribe"/>Subscribe to the Tasty Treats Newsletter (Tick box <strong>to subscribe</strong>)</label>
+      </div>
+      <button type="submit" class="form__submit">Submit</button>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
 </html>
