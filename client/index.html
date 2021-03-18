@@ -5,6 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <title>Tasty Treats</title>
 </head>
 <body>
@@ -12,15 +14,15 @@
     <h1>Tasty Treats inquiry form</h1>
   </header>
   <main>
-    <form class="form">
+    <form class="form" action="/create" method="POST">
       <label for="name"/>Your Name</label>
-      <input type="text" name="name" class="form__name" required/>
+      <input id="name" type="text" name="name" class="form__name" required pattern=".*\S.*" title="This field is required" placeholder="Enter your name here"/>
       <label for="email"/>Your Email Address</label>
-      <input type="email" name="email" class="form__email" required/>
+      <input id="email" type="email" name="email" class="form__email" required placeholder="Enter your email address here"/>
       <label for="inquiry"/>Your Inquiry</label>
-      <textarea name="inquiry" class="form__inquiry" rows="10" required></textarea>
+      <textarea id="inquiry" name="inquiry" class="form__inquiry" rows="10" required pattern=".*\S.*" title="This field is required" placeholder="Enter your inquiry here..."></textarea>
       <div>
-        <input type="checkbox" name="subscribe" class="form__subscribe"/>
+        <input id="subscribe" type="checkbox" name="subscribe" class="form__subscribe"/>
         <label class="form__subscribe-label" for="subscribe"/>Subscribe to the Tasty Treats Newsletter (Tick box <strong>to subscribe</strong>)</label>
       </div>
       <button type="submit" class="form__submit">Submit</button>
