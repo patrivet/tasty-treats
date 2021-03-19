@@ -5,11 +5,15 @@ const app = express();
 const fs = require('fs');
 const path = require('path');
 const { checkDirectory } = require('./utils');
+const clientDir = path.resolve(__dirname, '../client');
 
 app.use(morgan('tiny'))
 app.use(express.static('client'));
 app.use(express.urlencoded({ extended: true }));
 app.use(checkDirectory);
+
+app.get('/inquiry', (_, res) => res.sendFile(clientDir + '/inquiry.html'));
+app.get('/inquiries', (_, res) => res.sendFile(clientDir + '/inquiries.html'));
 
 app.post('/create', checkDirectory, function(req, res) {
   const requestBody = req.body;
