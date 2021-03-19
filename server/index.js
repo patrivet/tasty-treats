@@ -12,7 +12,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(checkDirectory);
 
 app.post('/create', checkDirectory, function(req, res) {
-  console.log('INFO: /form/ POST running..');
   const requestBody = req.body;
 
   // New property to clearly state newsletter subscription choice.
