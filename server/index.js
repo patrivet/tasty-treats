@@ -10,7 +10,6 @@ const clientDir = path.resolve(__dirname, '../client');
 app.use(morgan('tiny'))
 app.use(express.static('client'));
 app.use(express.urlencoded({ extended: true }));
-app.use(checkDirectory);
 
 app.get('/inquiry', (_, res) => res.sendFile(clientDir + '/inquiry.html'));
 app.get('/inquiries', (_, res) => res.sendFile(clientDir + '/inquiries.html'));
@@ -28,7 +27,7 @@ app.post('/create', checkDirectory, function(req, res) {
   const newInquiryObj = JSON.stringify(requestBody);
 
   const inquiryTimestamp = Date.now();
-  const filePath = path.join(__dirname, `/files/inquiry_${requestBody.email}_${inquiryTimestamp.toString()}.json`);
+  const filePath = path.join(__dirname, `/inquiryFiles/inquiry_${requestBody.email}_${inquiryTimestamp.toString()}.json`);
 
   try {
     fs.writeFile(filePath, newInquiryObj, (err) => {
