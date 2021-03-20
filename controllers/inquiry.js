@@ -9,7 +9,7 @@ exports.getInquiryForm = (_, res) => {
 
 exports.getInquiriesView = (_, res) => {
   const files = inquiry.getAll();
-  res.render('inquiriesView', { layout: false });
+  res.render('inquiriesView', { layout: false, inquiries: files });
 };
 
 exports.postInquiry = (req, res) => {
