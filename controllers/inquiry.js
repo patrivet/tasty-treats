@@ -1,6 +1,6 @@
 const inquiry = require('../models/inquiry');
 const path = require('path');
-const clientDir = path.join(__dirname, '../../client');
+const clientDir = path.join(__dirname, '../client');
 const filesDir = path.join(__dirname, '../inquiryFiles');
 
 exports.getInquiryForm = (_, res) => {
@@ -8,8 +8,8 @@ exports.getInquiryForm = (_, res) => {
 };
 
 exports.getInquiriesView = (_, res) => {
-  inquiry.getAll();
-  res.sendFile(clientDir + '/inquiries.html')
+  const files = inquiry.getAll();
+  res.render('inquiriesView', { layout: false });
 };
 
 exports.postInquiry = (req, res) => {

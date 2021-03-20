@@ -3,7 +3,12 @@ const PORT = 3000;
 const morgan = require('morgan');
 const app = express();
 const router = require('./router');
-console.log(`=== index.js`);
+const expbs = require('express-handlebars');
+
+app.engine('handlebars', expbs ({
+  defaultLayout: false
+}));
+app.set('view engine', 'handlebars');
 
 app.use(morgan('tiny'))
 app.use(express.static('client'));
