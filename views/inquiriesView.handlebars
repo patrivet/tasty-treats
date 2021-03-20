@@ -15,25 +15,31 @@
 </head>
 
 <body>
-  <div class="inquiries">(This is a placeholder)</div>
+  <h1 class="inquiries">All Inquiries</h1>
   <table id="inquiriesTable">
     <thead>
       <tr>
         <th>Name</th>
         <th>Email</th>
         <th>Inquiry</th>
-        <th>Newsletter Subscription</th>
+        <th>Subscribed</th>
       </tr>
     </thead>
     <tbody>
+
+
+      {{#each inquiries}}
+      <tr>
+        <td>{{this.name}}</td>
+        <td>{{this.email}}</td>
+        <td>{{this.inquiry}}</td>
+        <td>{{this.subscribeToNewsletter}}</td>
+      </tr>
+      {{/each}}
     </tbody>
   </table>
 
-  <ul class="list-group">
-    {{#each inquiries}}
-    <li class="list-group-item">{{this.email}}</li>
-    {{/each}}
-  </ul>
+
 </body>
 
 </html>
