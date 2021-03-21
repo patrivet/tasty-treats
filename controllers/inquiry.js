@@ -9,6 +9,7 @@ exports.getInquiryForm = (_, res) => {
 
 exports.getInquiriesView = (_, res) => {
   const files = inquiry.getAll();
+  files.sort((a, b) => a.timestamp > b.timestamp);
   res.render('inquiriesView', { layout: false, inquiries: files });
 };
 
@@ -21,12 +22,14 @@ exports.postInquiry = (req, res) => {
   // Remove unrequired property.
   delete requestBody.subscribe;
 
+  // Add timestamp to inquiry object
+  const inquiryTimestamp = Date.now();
+  requestBody.timestamp = inquiryTimestamp;
+
   // Convert object to string.
   const newInquiryObj = JSON.stringify(requestBody);
 
-  const inquiryTimestamp = Date.now();
   const filePath = path.join(filesDir, `/inquiry_${requestBody.email}_${inquiryTimestamp.toString()}.json`);
-
   const result = inquiry.addOne(filePath, newInquiryObj)
 
   if (!result) {

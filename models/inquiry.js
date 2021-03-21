@@ -10,8 +10,14 @@ exports.getAll = () => {
     fs.readFile(path.join(filesDir, file), (err, data) => {
       if (err) {
         throw err;
+      };
+      if (data) {
+        try {
+          files.push(JSON.parse(data));
+        } catch (error) {
+          console.log(`ERROR: peforming JSON parse. Error =${error}`)
+        }
       }
-      files.push(JSON.parse(data));
     });
   });
 
