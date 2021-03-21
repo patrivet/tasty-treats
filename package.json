@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "server": "nodemon",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install"
   },
   "repository": {
     "type": "git",
@@ -23,5 +26,9 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
+  },
+  "engines": {
+    "node":"14.15.1",
+    "npm":"7.5.3"
   }
 }
