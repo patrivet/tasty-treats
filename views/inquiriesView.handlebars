@@ -32,7 +32,11 @@
         <td>{{this.name}}</td>
         <td>{{this.email}}</td>
         <td>{{this.inquiry}}</td>
-        <td>{{this.subscribeToNewsletter}}</td>
+        {{#if this.subscribe}}
+        <td>Yes</td>
+        {{else}}
+        <td>No</td>
+        {{/if}}
       </tr>
       {{/each}}
     </tbody>

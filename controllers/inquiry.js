@@ -16,12 +16,6 @@ exports.getInquiriesView = (_, res) => {
 exports.postInquiry = (req, res) => {
   const requestBody = req.body;
 
-  // New property to clearly state newsletter subscription choice.
-  const subscriber = (requestBody.subscribe) ? 'Yes' : 'No';
-  requestBody.subscribeToNewsletter = subscriber;
-  // Remove unrequired property.
-  delete requestBody.subscribe;
-
   // Add timestamp to inquiry object
   const inquiryTimestamp = Date.now();
   requestBody.timestamp = inquiryTimestamp;
