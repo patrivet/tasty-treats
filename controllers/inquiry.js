@@ -9,7 +9,6 @@ exports.getInquiryForm = (_, res) => {
 
 exports.getInquiriesView = (_, res) => {
   const files = inquiry.getAll();
-  files.sort((a, b) => a.timestamp > b.timestamp);
   res.render('inquiriesView', { layout: false, inquiries: files });
 };
 

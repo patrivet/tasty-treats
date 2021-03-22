@@ -14,6 +14,7 @@ exports.getAll = () => {
       if (data) {
         try {
           files.push(JSON.parse(data));
+          files.sort( (a, b) => b.timestamp - a.timestamp);
         } catch (error) {
           console.log(`ERROR: peforming JSON parse. Error =${error}`)
         }
