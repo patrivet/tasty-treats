@@ -1,21 +1,10 @@
 * {
   font-family: 'Rubik', sans-serif;
-  font-weight: 400;
   margin: 10px
 }
 
-h1 {
-  font-weight: 500;
-}
-
-input, textarea {
-  display: block;
-  width: 50%;
-  margin-bottom: 10px;
-}
-
-input:last-child {
-  margin-bottom: 0;
+input[type=checkbox] {
+  cursor: pointer;
 }
 
 :is(textarea, input)::placeholder {
@@ -24,5 +13,4 @@ input:last-child {
 
 .form__subscribe-label, .form__subscribe {
   display: inline;
-  width: auto;
 }
