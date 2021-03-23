@@ -10,7 +10,7 @@ app.engine('handlebars', expbs ({
 }));
 app.set('view engine', 'handlebars');
 
-app.use(morgan('tiny'))
+app.use(morgan('tiny'));
 app.use(express.static('client'));
 app.use(express.urlencoded({ extended: true }));
 app.use(router);
