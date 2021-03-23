@@ -4,6 +4,5 @@
 
  1. Clone this repo ```git clone https://github.com/patrivet/tasty-treats.git```
  2. Install dependancies ```npm install```
- 3. nodemon server.js
- 4. Open up the client in a web browser at http://localhost:3000/  
-```
+ 3. run ```nodemon server.js``` to start the server.
+ 4. Open a web browser and access: http://localhost:3000/ 
